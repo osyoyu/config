@@ -65,6 +65,9 @@ case ${OSTYPE} in
     ;;
 esac
 
+# Shortcuts
+alias g="git"
+
 # C++ compilers
 alias g++11="g++ -std=c++11 -Wall -pedantic"
 alias clang++11="clang++ -std=c++11 -Wall -pedantic -I/Users/osyoyu/Sprout"
