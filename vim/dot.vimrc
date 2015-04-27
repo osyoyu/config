@@ -28,6 +28,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 
 NeoBundle 'tpope/vim-surround'
 
+NeoBundle 'nginx.vim'
 NeoBundle 'slim-template/vim-slim'
 
 call neobundle#end()
