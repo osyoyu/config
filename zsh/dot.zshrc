@@ -73,6 +73,9 @@ alias g++11="g++ -std=c++11 -Wall -pedantic"
 alias clang++11="clang++ -std=c++11 -Wall -pedantic -I/Users/osyoyu/Sprout"
 alias clang++1y="clang++ -std=c++1y -Wall -pedantic -I/Users/osyoyu/Sprout"
 
+# Other Aliases
+alias ssh-silent="ssh -fN"
+
 # Things come in handy
 alias history-all="history -E 1"
 alias cls='printf "\033c"'
