@@ -30,6 +30,8 @@ NeoBundle 'Shougo/neocomplete.vim'
 " Vim
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 " Ruby
 NeoBundle "osyo-manga/vim-monster"
@@ -130,6 +132,24 @@ augroup vimrc-auto-cursorline
   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
   autocmd CursorHold,CursorHoldI * setlocal cursorline
 augroup END
+
+"============================
+" lightline
+"============================
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&readonly?"RO":""}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 
 "============================
 " neocomplete
