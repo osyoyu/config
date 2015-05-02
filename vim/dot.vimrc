@@ -13,7 +13,6 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \   'windows' : 'tools\\update-dll-mingw',
@@ -22,14 +21,25 @@ NeoBundle 'Shougo/vimproc', {
       \   'unix' : 'make -f make_unix.mak',
       \   },
       \ }
+
+" Completion
 NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
+"NeoBundle 'Shougo/neosnippet.vim'
+"NeoBundle 'Shougo/neosnippet-snippets'
 
+" Vim
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'thinca/vim-quickrun'
 
-NeoBundle 'nginx.vim'
+" Ruby
+NeoBundle "osyo-manga/vim-monster"
+
+" JavaScript
+NeoBundle "pangloss/vim-javascript"
+
+" Other languages
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'nginx.vim'
 
 call neobundle#end()
 NeoBundleCheck
@@ -38,7 +48,6 @@ NeoBundleCheck
 " Editor
 "============================
 set number
-"set relativenumber
 set list
 set listchars=tab:>\ ,trail:_,nbsp:!
 " match Error /\v\s+%#@!$/
@@ -123,10 +132,6 @@ augroup vimrc-auto-cursorline
 augroup END
 
 "============================
-" Plugins
-"============================
-
-"============================
 " neocomplete
 "============================
 if neobundle#is_installed('neocomplete.vim')
@@ -142,9 +147,10 @@ if neobundle#is_installed('neocomplete.vim')
 
   " fire omni-complete
   if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {
+          \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+          \}
   endif
-  "let g:neocomplete#force_omni_input_patterns.ruby = '\v[^. *\t].\w*|\h\w*::'
 
   " Plugin key-mappings.
   inoremap <expr><C-g>     neocomplcache#undo_completion()
@@ -185,3 +191,8 @@ if neobundle#is_installed('neosnippet.vim')
     set conceallevel=2 concealcursor=i
   endif
 endif
+
+"============================
+" vim-monster
+"============================
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
