@@ -188,6 +188,9 @@ if [[ ${OSTYPE} =~ "^darwin" ]] then
   export PATH="/usr/texbin:$PATH"
 fi
 
+# Heroku
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # OS X
 if [[ ${OSTYPE} =~ "^darwin" ]] then
   export PATH="/usr/local/bin:$PATH"
