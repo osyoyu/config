@@ -36,8 +36,9 @@ NeoBundle 'tpope/vim-fugitive'
 " Ruby
 NeoBundle "osyo-manga/vim-monster"
 
-" JavaScript
+" JavaScript and AltJS
 NeoBundle "pangloss/vim-javascript"
+NeoBundle "kchmck/vim-coffee-script"
 
 " Other languages
 NeoBundle 'slim-template/vim-slim'
