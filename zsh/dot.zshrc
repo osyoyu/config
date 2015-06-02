@@ -77,6 +77,7 @@ alias clang++1y="clang++ -std=c++1y -Wall -pedantic -I/Users/osyoyu/Sprout"
 alias ssh-silent="ssh -fN"
 
 # Things come in handy
+alias be="bundle exec"
 alias history-all="history -E 1"
 alias cls='printf "\033c"'
 alias zsh-reload=". ~/.zshrc"
