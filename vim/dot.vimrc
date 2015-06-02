@@ -33,8 +33,9 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
-" Ruby
-NeoBundle "osyo-manga/vim-monster"
+" Ruby and Ruby on Rails
+"NeoBundle "osyo-manga/vim-monster"
+"NeoBundle "tpope/vim-rails"
 
 " JavaScript and AltJS
 NeoBundle "pangloss/vim-javascript"
@@ -77,7 +78,7 @@ augroup filetypes
   autocmd!
   autocmd BufNewFile,BufRead *.erb set filetype=eruby.html
   autocmd BufNewFile,Bufread *.md  set filetype=markdown
-  autocmd BufEnter *.cpp NeoSnippetSource ~/.vim/snippets/contest-cpp.snip
+  " autocmd BufEnter *.cpp NeoSnippetSource ~/.vim/snippets/contest-cpp.snip
 augroup END
 
 augroup indents
