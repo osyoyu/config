@@ -14,6 +14,8 @@ export KCODE=u
 setopt correct
 setopt magic_equal_subst
 
+autoload -Uz add-zsh-hook
+
 
 #----------------------------
 # History
@@ -89,7 +91,6 @@ alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 # Pre/Post-commands
 #----------------------------
 preexec_functions=()
-precmd_functions=()
 
 function chpwd() {
   emulate -L zsh
@@ -121,16 +122,16 @@ function set_title_to_pwd {
 if [ "$(echo ${SSH_CLIENT} | tr -d '\n')" != "" ]; then
   preexec_functions=($preexec_functions set_title_to_command)
   postexec_functions=($preexec_functions set_title_to_hostname)
-  precmd_functions=($precmd_functions set_title_to_hostname)
+  add-zsh-hook precmd set_title_to_hostname
 fi
 
-precmd_functions=($precmd_functions set_title_to_pwd)
+add-zsh-hook precmd set_title_to_pwd
 
 
 #----------------------------
 # Prompt
 #----------------------------
-autoload colors; colors
+autoload -Uz colors; colors
 
 local name="%n"
 if [ "$(whoami)" = "root" ]; then
@@ -142,12 +143,25 @@ if [ "$(echo ${SSH_CLIENT} | tr -d '\n')" != "" ]; then
   host="@%U%M%u"
 fi
 
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '#%b'
+zstyle ':vcs_info:*' actionformats '#%b|%a'
+
+function _precmd_vcs_info {
+  LANG=en_US.UTF-8 vcs_info
 PROMPT="
-${name}${host} %{%(?.$fg[blue].$fg[red])%}%~%{$reset_color%}
+${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%}
+%# "
+}
+add-zsh-hook precmd _precmd_vcs_info
+
+setopt prompt_subst
+setopt transient_rprompt
+PROMPT="
+${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%}
 %# "
 RPROMPT="%T"
 
-setopt transient_rprompt
 
 
 #----------------------------
