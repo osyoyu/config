@@ -150,17 +150,14 @@ zstyle ':vcs_info:*' actionformats '#%b|%a'
 
 function _precmd_vcs_info {
   LANG=en_US.UTF-8 vcs_info
-PROMPT="
-${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%}
-%# "
 }
 add-zsh-hook precmd _precmd_vcs_info
 
 setopt prompt_subst
 setopt transient_rprompt
-PROMPT="
+PROMPT='
 ${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%}
-%# "
+%# '
 RPROMPT="%T"
 
 
