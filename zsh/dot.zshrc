@@ -85,6 +85,7 @@ alias cls='printf "\033c"'
 alias zsh-reload=". ~/.zshrc"
 alias ds-store-delete="find . -name ".DS_Store" -depth -exec rm {} \;"
 alias rot13="tr A-Za-z N-ZA-Mn-za-m"
+alias fuckswp="find . -name '*.swp' -exec rm {} \;"
 
 
 #----------------------------
