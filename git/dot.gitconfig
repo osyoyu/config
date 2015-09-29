@@ -19,6 +19,10 @@
 	d = diff -b
 	co = checkout
 	cob = checkout -b
+	c = commit
+	cm = commit -m
+	cma = commit --amend
+	p = push
 	s = status -s
 	l = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd\n%Cblue%cn %Cred%d %Creset%s'
 	ld = log -p --graph
