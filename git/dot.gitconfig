@@ -28,5 +28,5 @@
 	ld = log -p --graph
 	logg = log --stat --graph --decorate=full
 	loggg = log --stat --graph --format=fuller
-	logdiff = log -p -5
+	logdiff = log -p -b -5
 	ls = stash list
