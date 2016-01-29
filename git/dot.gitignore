@@ -5,3 +5,8 @@
 .bundle
 vendor/
 .ruby-version
+
+npm-debug.log
+
+# Redis
+dump.rdb
