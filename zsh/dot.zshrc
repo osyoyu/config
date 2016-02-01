@@ -209,3 +209,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if [[ ${OSTYPE} =~ "^darwin" ]] then
   export PATH="/usr/local/bin:$PATH"
 fi
+
+# OCaml / OPAM
+source ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
