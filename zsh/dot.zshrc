@@ -80,6 +80,7 @@ alias ssh-silent="ssh -fN"
 
 # Things come in handy
 alias be="bundle exec"
+alias sr="stack run"
 alias history-all="history -E 1"
 alias cls='printf "\033c"'
 alias zsh-reload=". ~/.zshrc"
