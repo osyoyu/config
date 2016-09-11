@@ -8,4 +8,4 @@ osyoyu config files
 If you are osyoyu
 -----------------
 1. `git clone git@github.com:osyoyu/config.git`
-2. `make`
+2. `./setup.sh`
