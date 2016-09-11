@@ -30,3 +30,4 @@
 	loggg = log --stat --graph --format=fuller
 	logdiff = log -p -b -5
 	ls = stash list
+	unstage = reset HEAD
