@@ -31,3 +31,4 @@
 	logdiff = log -p -b -5
 	ls = stash list
 	unstage = reset HEAD
+	makimodoshi = reset
