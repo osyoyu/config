@@ -5,7 +5,6 @@
 
 .bundle
 vendor/
-.ruby-version
 
 npm-debug.log
 node_modules
