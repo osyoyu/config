@@ -23,7 +23,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 
 " Completion
-NeoBundle 'Shougo/neocomplete.vim'
+"NeoBundle 'Shougo/neocomplete.vim'
 "NeoBundle 'Shougo/neosnippet.vim'
 "NeoBundle 'Shougo/neosnippet-snippets'
 
