@@ -9,10 +9,8 @@ fi
 
 export EDITOR=vim
 export LANG=en_US.UTF-8
-export KCODE=u
 
 setopt correct
-setopt magic_equal_subst
 
 autoload -Uz add-zsh-hook
 
@@ -53,8 +51,6 @@ setopt auto_pushd
 #----------------------------
 # Alias
 #----------------------------
-alias cd=" cd"
-
 case ${OSTYPE} in
   linux*)
     alias ls="ls -lh --color=auto --show-control-chars"
@@ -70,17 +66,11 @@ esac
 # Shortcuts
 alias g="git"
 
-# C++ compilers
-alias g++11="g++ -std=c++11 -Wall -pedantic"
-alias clang++11="clang++ -std=c++11 -Wall -pedantic -I/Users/osyoyu/Sprout"
-alias clang++1y="clang++ -std=c++1y -Wall -pedantic -I/Users/osyoyu/Sprout"
-
 # Other Aliases
 alias ssh-silent="ssh -fN"
 
 # Things come in handy
 alias be="bundle exec"
-alias sr="stack run"
 alias history-all="history -E 1"
 alias cls='printf "\033c"'
 alias zsh-reload=". ~/.zshrc"
@@ -162,7 +152,6 @@ ${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset
 RPROMPT="%T"
 
 
-
 #----------------------------
 # Key Bindings
 # https://bbs.archlinux.org/viewtopic.php?pid=428669
@@ -187,9 +176,6 @@ bindkey "\^P" bck-i-search
 #----------------------------
 # PATH and Package Managers
 #----------------------------
-# local
-export PATH="$HOME/local/bin:$PATH"
-
 # rbenv
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -197,18 +183,7 @@ eval "$(rbenv init -)"
 # nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
-# MacTeX
-if [[ ${OSTYPE} =~ "^darwin" ]] then
-  export PATH="/usr/texbin:$PATH"
-fi
-
-# Heroku
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # OS X
 if [[ ${OSTYPE} =~ "^darwin" ]] then
   export PATH="/usr/local/bin:$PATH"
 fi
-
-# OCaml / OPAM
-source ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
