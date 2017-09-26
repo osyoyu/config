@@ -29,9 +29,7 @@ NeoBundle 'Shougo/vimproc', {
 
 " Vim
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'tpope/vim-fugitive'
 
 " Ruby and Ruby on Rails
 "NeoBundle "osyo-manga/vim-monster"
