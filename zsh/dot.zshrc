@@ -72,6 +72,9 @@ alias g="git"
 alias ssh-silent="ssh -fN"
 
 # Things come in handy
+alias cdgitroot='cd $(git rev-parse --show-toplevel)'
+alias cg='cdgitroot'
+alias cdout='cdgitroot; cd ..'
 alias be="bundle exec"
 alias history-all="history -E 1"
 alias cls='printf "\033c"'
