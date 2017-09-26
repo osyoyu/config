@@ -14,6 +14,8 @@ setopt correct
 
 autoload -Uz add-zsh-hook
 
+export REPORTTIME=10
+
 
 #----------------------------
 # History
