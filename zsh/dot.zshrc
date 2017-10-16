@@ -116,6 +116,12 @@ function set_title_to_pwd {
   printf "\033k$(basename $(pwd))\033\\"
 }
 
+function say_command {
+  osascript -e "set Volume 10"
+  say -- $(fc -ln -1)
+  osascript -e "set Volume 0"
+}
+
 if [ "$(echo ${SSH_CLIENT} | tr -d '\n')" != "" ]; then
   preexec_functions=($preexec_functions set_title_to_command)
   postexec_functions=($preexec_functions set_title_to_hostname)
@@ -123,6 +129,7 @@ if [ "$(echo ${SSH_CLIENT} | tr -d '\n')" != "" ]; then
 fi
 
 add-zsh-hook precmd set_title_to_pwd
+# add-zsh-hook precmd say_command
 
 
 #----------------------------
