@@ -1,0 +1,11 @@
+[[plugins]]
+repo  = 'vim-scripts/nginx.vim'
+on_ft = ['nginx']
+
+[[plugins]]
+repo  = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+[[plugins]]
+repo  = 'slim-template/vim-slim'
+on_ft = ['slim']

@@ -10,41 +10,30 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+"dein -------------
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_core_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \   'windows' : 'tools\\update-dll-mingw',
-      \   'cygwin' : 'make -f make_cygwin.mak',
-      \   'mac' : 'make -f make_mac.mak',
-      \   'unix' : 'make -f make_unix.mak',
-      \   },
-      \ }
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" Completion
-"NeoBundle 'Shougo/neocomplete.vim'
-"NeoBundle 'Shougo/neosnippet.vim'
-"NeoBundle 'Shougo/neosnippet-snippets'
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-" Vim
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'itchyny/lightline.vim'
+  let g:rc_dir    = expand('~/.vim')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
-" Ruby and Ruby on Rails
-"NeoBundle "osyo-manga/vim-monster"
-"NeoBundle "tpope/vim-rails"
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
-" JavaScript and AltJS
-NeoBundle "pangloss/vim-javascript"
-NeoBundle "kchmck/vim-coffee-script"
+  call dein#end()
+  call dein#save_state()
+endif
 
-" Other languages
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'nginx.vim'
+if dein#check_install()
+  call dein#install()
+endif
 
-call neobundle#end()
-NeoBundleCheck
 
 "============================
 " Editor
