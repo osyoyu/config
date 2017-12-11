@@ -11,6 +11,7 @@ if has('vim_starting')
 endif
 
 "dein -------------
+"git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
 let s:dein_dir = expand('~/.vim/dein')
 let s:dein_core_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -139,69 +140,3 @@ let g:lightline = {
       \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ }
       \ }
-
-"============================
-" neocomplete
-"============================
-if neobundle#is_installed('neocomplete.vim')
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-  " let g:neocomplete#enable_camel_case = 1
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
-
-  " dictonaries
-  let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ }
-
-  " fire omni-complete
-  if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {
-          \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-          \}
-  endif
-
-  " Plugin key-mappings.
-  inoremap <expr><C-g>     neocomplcache#undo_completion()
-  inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-  " Key mappings from https://github.com/Shougo/neocomplete.vim
-  " <CR>: close popup and save indent.
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  function! s:my_cr_function()
-    "return neocomplete#close_popup() . "\<CR>"
-    " For no inserting <CR> key.
-    return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-  endfunction
-  " <TAB>: completion.
-  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-y>  neocomplete#close_popup()
-  inoremap <expr><C-e>  neocomplete#cancel_popup()
-endif
-
-"============================
-" neosnippet
-"============================
-if neobundle#is_installed('neosnippet.vim')
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-  imap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-        \ "\<Plug>(neosnippet_expand_or_jump)"
-        \ : "\<TAB>"
-
-  " For snippet_complete marker.
-  if has('conceal')
-    set conceallevel=2 concealcursor=i
-  endif
-endif
-
-"============================
-" vim-monster
-"============================
-let g:monster#completion#rcodetools#backend = "async_rct_complete"
