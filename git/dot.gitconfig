@@ -26,6 +26,8 @@
 	j = pull
 	s = status -s
 	l = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd\n%Cblue%cn %Cred%d %Creset%s'
+	wip = commit -a -m wip
+	unwip = reset @~1
 	logg = log --stat --graph --decorate=full
 	loggg = log --stat --graph --format=fuller
 	logdiff = log -p -b -5
