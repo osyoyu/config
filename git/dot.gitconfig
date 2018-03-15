@@ -34,3 +34,5 @@
 	ls = stash list
 	unstage = reset HEAD
 	makimodoshi = reset
+	superpull = pull upstream master
+	superpush = ! git push -u origin $(git rev-parse --abbrev-ref HEAD)
