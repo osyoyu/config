@@ -11,6 +11,7 @@ export EDITOR=vim
 export LANG=en_US.UTF-8
 
 setopt correct
+setopt interactivecomments
 
 autoload -Uz add-zsh-hook
 
