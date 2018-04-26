@@ -22,8 +22,8 @@ export REPORTTIME=10
 # History
 #----------------------------
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=50000
+HISTSIZE=1000000
+SAVEHIST=5000000
 setopt extended_history
 setopt share_history
 setopt hist_ignore_space
