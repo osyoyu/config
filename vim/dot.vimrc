@@ -114,14 +114,14 @@ set backupskip=/tmp/*,/private/tmp/*
 "============================
 " View
 "============================
-highlight LineNr ctermfg=60
-
-" http://d.hatena.ne.jp/thinca/20090530/1243615055
-augroup vimrc-auto-cursorline
-  autocmd!
-  autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
-  autocmd CursorHold,CursorHoldI * setlocal cursorline
-augroup END
+" highlight LineNr ctermfg=60
+"
+" " http://d.hatena.ne.jp/thinca/20090530/1243615055
+" augroup vimrc-auto-cursorline
+"   autocmd!
+"   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
+"   autocmd CursorHold,CursorHoldI * setlocal cursorline
+" augroup END
 
 "============================
 " lightline
