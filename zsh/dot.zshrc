@@ -59,14 +59,8 @@ case ${OSTYPE} in
     ;;
   darwin*)
     alias ls="ls -lhG"
-
-    alias gcc="gcc-4.9"
-    alias g++="g++-4.9"
     ;;
 esac
-
-# Shortcuts
-alias g="git"
 
 # Other Aliases
 alias ssh-silent="ssh -fN"
@@ -74,11 +68,10 @@ alias ssh-silent="ssh -fN"
 # Things come in handy
 alias cdgitroot='cd $(git rev-parse --show-toplevel)'
 alias cdg='cdgitroot'
-alias cdout='cdgitroot; cd ..'
 alias be="bundle exec"
 alias history-all="history -E 1"
 alias cls='printf "\033c"'
-alias zsh-reload=". ~/.zshrc"
+alias zsh-reload="source ~/.zshrc"
 alias ds-store-delete="find . -name ".DS_Store" -depth -exec rm {} \;"
 alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 alias fuckswp="find . -name '*.swp' -exec rm {} \;"
