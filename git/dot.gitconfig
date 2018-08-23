@@ -15,6 +15,9 @@
 [push]
 	default = simple
 
+[submodule]
+	recurse = true
+
 [alias]
 	d = diff -b
 	co = checkout
