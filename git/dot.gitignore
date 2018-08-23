@@ -1,6 +1,7 @@
 *.DS_Store
 .*.sw*
 .idea/
+*.iml
 .vscode
 
 .bundle
@@ -8,6 +9,8 @@ vendor/
 
 npm-debug.log
 node_modules
+
+.env
 
 # Redis
 dump.rdb
