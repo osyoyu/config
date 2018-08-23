@@ -151,8 +151,13 @@ add-zsh-hook precmd _precmd_vcs_info
 
 setopt prompt_subst
 setopt transient_rprompt
+
+if [[ -v ${VIRTUAL_ENV} ]]; then
+  local PY_VENV_STRING="py: $(basename ${VIRTUAL_ENV})"
+fi
+
 PROMPT='
-${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%}
+${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%} $(basename "${VIRTUAL_ENV} ")
 %# '
 RPROMPT="%T"
 
@@ -177,6 +182,13 @@ eval "$(rbenv init -)"
 
 # nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
+# virtualenv
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+source ~/.virtualenvs/default/bin/activate
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # OS X
 if [[ ${OSTYPE} =~ "^darwin" ]] then
