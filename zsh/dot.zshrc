@@ -176,6 +176,9 @@ bindkey "\^P" bck-i-search
 #----------------------------
 # PATH and Package Managers
 #----------------------------
+# Homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1  # don't run update on install
+
 # rbenv
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
