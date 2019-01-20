@@ -1,2 +1,2 @@
-setlocal tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
+setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 set listchars=tab:\ \ ,trail:_,nbsp:!
