@@ -5,6 +5,10 @@
 [user]
 	name = osyoyu
 	email = osyoyu@osyoyu.com
+	signingkey = "3E52C704B1FD2D0C"
+
+[commit]
+	gpgsign = true
 
 [merge]
 	ff = only
