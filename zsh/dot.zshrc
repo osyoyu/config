@@ -190,6 +190,10 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PIPENV_VENV_IN_PROJECT=1
 
+# GOPATH
+export GOPATH="$HOME/go"
+export PATH="$HOME/go/bin:$PATH"
+
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
