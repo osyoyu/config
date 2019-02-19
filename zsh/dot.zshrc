@@ -186,9 +186,9 @@ eval "$(rbenv init -)"
 # nodebrew
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
-# virtualenv
+# virtualenv (pipenv)
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-source ~/.virtualenvs/default/bin/activate
+export PIPENV_VENV_IN_PROJECT=1
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
