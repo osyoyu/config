@@ -12,5 +12,7 @@ node_modules
 
 .env
 
+__pycache__
+
 # Redis
 dump.rdb
