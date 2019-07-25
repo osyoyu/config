@@ -80,6 +80,14 @@ set smartcase
 " misc
 set ambiwidth=double
 
+" Bracketed-paste mode support (see :help xterm-bracketed-paste)
+if &term =~ "screen"
+  let &t_BE = "\e[?2004h"
+  let &t_BD = "\e[?2004l"
+  exec "set t_PS=\e[200~"
+  exec "set t_PE=\e[201~"
+endif
+
 "============================
 " Key Mappings
 "============================
