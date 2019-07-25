@@ -176,6 +176,9 @@ bindkey "\^P" bck-i-search
 #----------------------------
 # PATH and Package Managers
 #----------------------------
+# ~/.local/bin
+export PATH="$PATH:$HOME/.local/bin"
+
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1  # don't run update on install
 
