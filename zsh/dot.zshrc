@@ -204,3 +204,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 if [[ ${OSTYPE} =~ "^darwin" ]] then
   export PATH="/usr/local/bin:$PATH"
 fi
+
+
+#----------------------------
+# Other env vars
+#----------------------------
+export GPG_TTY=$(tty)
