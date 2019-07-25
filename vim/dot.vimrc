@@ -6,6 +6,7 @@ set encoding=utf-8
 nnoremap <F5> :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <F6> :<C-u>source $MYVIMRC<CR>
 
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
