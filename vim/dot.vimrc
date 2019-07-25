@@ -6,34 +6,18 @@ set encoding=utf-8
 nnoremap <F5> :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <F6> :<C-u>source $MYVIMRC<CR>
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
+call plug#begin('~/.vim/plugged')
 
-"dein -------------
-"git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
-let s:dein_dir = expand('~/.vim/dein')
-let s:dein_core_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
 
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+" Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'google/vim-jsonnet', { 'for': 'jsonnet' }
 
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  let g:rc_dir    = expand('~/.vim')
-  let s:toml      = g:rc_dir . '/dein.toml'
-  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
-
-  call dein#load_toml(s:toml,      {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-if dein#check_install()
-  call dein#install()
-endif
+call plug#end()
 
 
 "============================

@@ -1,3 +1,4 @@
+vim/dot.vim/autoload/plug.vim
 vim/dot.vim/bundle
-vim/dot.vim/dein
+vim/dot.vim/plugged
 vim/dot.vim/.netrwhist
