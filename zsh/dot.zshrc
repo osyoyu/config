@@ -116,8 +116,8 @@ function say_command {
 }
 
 if [ "$(echo ${SSH_CLIENT} | tr -d '\n')" != "" ]; then
-  preexec_functions=($preexec_functions set_title_to_command)
-  postexec_functions=($preexec_functions set_title_to_hostname)
+  # preexec_functions=($preexec_functions set_title_to_command)
+  # postexec_functions=($preexec_functions set_title_to_hostname)
   add-zsh-hook precmd set_title_to_hostname
 fi
 
