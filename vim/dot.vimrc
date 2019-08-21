@@ -39,6 +39,7 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+highlight clear SignColumn
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -107,6 +108,9 @@ set smartcase
 " misc
 set ambiwidth=double
 
+" completion
+set pumheight=10
+
 " Bracketed-paste mode support (see :help xterm-bracketed-paste)
 if &term =~ "screen"
   let &t_BE = "\e[?2004h"
@@ -114,6 +118,9 @@ if &term =~ "screen"
   exec "set t_PS=\e[200~"
   exec "set t_PE=\e[201~"
 endif
+
+nnoremap Y y$
+
 
 "============================
 " Key Mappings
