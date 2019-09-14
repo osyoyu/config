@@ -1,12 +1,6 @@
 #----------------------------
 # General
 #----------------------------
-if [ -n "$TMUX" ]; then
-  export TERM=screen-256color
-else
-  export TERM=xterm-256color
-fi
-
 export EDITOR=vim
 export LANG=en_US.UTF-8
 
