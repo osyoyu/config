@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh nightly' }
+" Plug 'neoclide/coc-solargraph'
 
 " Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
