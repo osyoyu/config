@@ -39,7 +39,6 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
-highlight clear SignColumn
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -164,6 +163,9 @@ set backupskip=/tmp/*,/private/tmp/*
 "   autocmd CursorMoved,CursorMovedI,WinLeave * setlocal nocursorline
 "   autocmd CursorHold,CursorHoldI * setlocal cursorline
 " augroup END
+
+set background=dark
+highlight clear SignColumn
 
 "============================
 " lightline
