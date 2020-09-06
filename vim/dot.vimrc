@@ -30,7 +30,7 @@ set fileencodings=utf-8,ucs-bom,sjis,cp932,euc-jp,iso-2022-jp
 set number
 set list listchars=tab:>\ ,trail:_,nbsp:!
 set tabstop=2 shiftwidth=2 expandtab
-set backspace=0
+set backspace=indent,start
 
 syntax on
 filetype plugin indent on
@@ -44,10 +44,10 @@ set smartcase
 set nohlsearch
 
 " === Appearance ===
-set display=lastline  " Display very long lines
+set display+=lastline  " Display very long lines
 set pumheight=10      " Limit completion window to 10 lines
 set cursorline
-set laststatus=1      " Show statusline only when 2+ windows are open
+" set laststatus=1      " Show statusline only when 2+ windows are open
 set ambiwidth=double  " For CJK
 
 set background=dark
