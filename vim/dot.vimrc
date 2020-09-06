@@ -9,8 +9,8 @@ Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
 " Plug 'itchyny/lightline.vim'
 
-Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': './install.sh nightly' }
-Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nginx/nginx', { 'rtp': 'contrib/vim' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'google/vim-jsonnet', { 'for': 'jsonnet' }
 call plug#end()
