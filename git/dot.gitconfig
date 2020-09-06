@@ -8,6 +8,7 @@
 	signingkey = "3E52C704B1FD2D0C"
 
 [commit]
+	verbose = true
 	gpgsign = true
 
 [merge]
