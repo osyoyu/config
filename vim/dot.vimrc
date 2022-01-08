@@ -58,10 +58,8 @@ colorscheme iceberg
 "============================
 " Key Mappings
 "============================
-inoremap jk <ESC>
 nnoremap Y y$
 nnoremap Q <Nop>
-
 
 "============================
 " Completion (coc.nvim)
