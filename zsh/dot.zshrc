@@ -150,8 +150,11 @@ if [[ -v ${VIRTUAL_ENV} ]]; then
   local PY_VENV_STRING="py: $(basename ${VIRTUAL_ENV})"
 fi
 
+# PROMPT='
+# ${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%} $(basename "${VIRTUAL_ENV} ")
+# %# '
 PROMPT='
-${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%} $(basename "${VIRTUAL_ENV} ")
+${name}${host} %{%(?.$fg[blue].$fg[red])%}%~$fg[green]${vcs_info_msg_0_}%{$reset_color%}
 %# '
 RPROMPT="%T"
 
