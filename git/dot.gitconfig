@@ -41,7 +41,9 @@
 	unstage = reset HEAD
 	superpull = pull upstream master
 	superpush = ! git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	pushf = push --force-with-lease
 	current = rev-parse --short HEAD
+	ingush = ! git push -f upstream $(git rev-parse --abbrev-ref HEAD):staging
 
 [filter "lfs"]
 	process = git-lfs filter-process
