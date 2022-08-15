@@ -7,6 +7,7 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -59,6 +60,13 @@ filetype plugin indent on
 " augroup vimrc
 "   autocmd!
 " augroup END
+
+"============================
+" Plugin config
+"============================
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = 'rg --no-require-git --files --color=never %s'
 
 "============================
 " Neovim-only conf
