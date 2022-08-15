@@ -7,14 +7,18 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
-" Plug 'itchyny/lightline.vim'
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'nginx/nginx', { 'rtp': 'contrib/vim' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'nginx/nginx', { 'for': 'nginx', 'rtp': 'contrib/vim' }
 Plug 'google/vim-jsonnet', { 'for': 'jsonnet' }
-call plug#end()
 
+if has('nvim')
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+endif
+call plug#end()
 
 set clipboard^=unnamed,unnamedplus
 set hidden
@@ -32,54 +36,56 @@ set list listchars=tab:>\ ,trail:_,nbsp:!
 set tabstop=2 shiftwidth=2 expandtab
 set backspace=indent,start
 
-syntax on
-filetype plugin indent on
-augroup filetypes
-  autocmd!
-  autocmd BufNewFile,Bufread *.c   set ts=8 sw=4 sts=4 et
-augroup END
-
 " === Search ===
 set smartcase
 set nohlsearch
 
 " === Appearance ===
 set display+=lastline  " Display very long lines
-set pumheight=10      " Limit completion window to 10 lines
+set pumheight=3        " Limit completion window to 3 lines
 set cursorline
-" set laststatus=1      " Show statusline only when 2+ windows are open
 set ambiwidth=double  " For CJK
 
 set background=dark
 colorscheme iceberg
-" highlight clear SignColumn
 
-
-"============================
-" Key Mappings
-"============================
+" === Key Mapping ===
 nnoremap Y y$
 nnoremap Q <Nop>
 
+" === Language support ===
+syntax on
+filetype plugin indent on
+" augroup vimrc
+"   autocmd!
+" augroup END
+
 "============================
-" Completion (coc.nvim)
+" Neovim-only conf
 "============================
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+if !has('nvim') | finish | endif
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+set completeopt=menu,menuone,noselect
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" TODO: Setup LSP?
+lua <<EOF
+  local cmp = require'cmp'
 
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
+  cmp.setup({
+    window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+      -- { name = 'nvim_lsp' }, -- LSP has higher precedence than others
+    }, {
+      { name = 'buffer' },
+      { name = 'path' },
+    })
+  })
+EOF
