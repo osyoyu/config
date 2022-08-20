@@ -69,7 +69,7 @@ filetype plugin indent on
 "============================
 " Plugin config
 "============================
-nnoremap <c-p> :Files<cr>
+nnoremap <c-p> :GFiles<cr>
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = ['down:50%:hidden', 'ctrl-_']
 
