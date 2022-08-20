@@ -5,14 +5,15 @@ set encoding=utf-8
 
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
-Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
+Plug 'cocopon/iceberg.vim'
 
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'nginx/nginx', { 'for': 'nginx', 'rtp': 'contrib/vim' }
-Plug 'google/vim-jsonnet', { 'for': 'jsonnet' }
 
 if has('nvim')
   Plug 'hrsh7th/nvim-cmp'
@@ -45,8 +46,15 @@ set nohlsearch
 set display+=lastline  " Display very long lines
 set pumheight=3        " Limit completion window to 3 lines
 set cursorline
-set ambiwidth=double  " For CJK
+set ambiwidth=double   " For CJK
+set signcolumn=number
+set laststatus=0
 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 set background=dark
 colorscheme iceberg
 
@@ -57,16 +65,13 @@ nnoremap Q <Nop>
 " === Language support ===
 syntax on
 filetype plugin indent on
-" augroup vimrc
-"   autocmd!
-" augroup END
 
 "============================
 " Plugin config
 "============================
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_user_command = 'rg --no-require-git --files --color=never %s'
+nnoremap <c-p> :Files<cr>
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_preview_window = ['down:50%:hidden', 'ctrl-_']
 
 "============================
 " Neovim-only conf
