@@ -10,7 +10,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
-Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -57,7 +57,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=dark
-colorscheme iceberg
+colorscheme onedark
 
 " === Key Mapping ===
 nnoremap Y y$
