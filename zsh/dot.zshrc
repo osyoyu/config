@@ -180,34 +180,34 @@ bindkey "\^P" bck-i-search
 #----------------------------
 # PATH and Package Managers
 #----------------------------
-# ~/.local/bin
-export PATH="$PATH:$HOME/.local/bin"
-
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1  # don't run update on install
 
-# rbenv
+# Ruby (rbenv)
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if type "rbenv" > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
-# nodebrew
+# Node (nodebrew, volta)
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
-# virtualenv (pipenv)
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PIPENV_VENV_IN_PROJECT=1
-
-# GOPATH
+# Go
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:$PATH"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# OS X
+# macOS
 if [[ ${OSTYPE} =~ "^darwin" ]] then
   export PATH="/usr/local/bin:$PATH"
 fi
+
+# ~/.local/bin
+export PATH="$PATH:$HOME/.local/bin"
 
 
 #----------------------------
