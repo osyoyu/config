@@ -1,8 +1,15 @@
 #----------------------------
 # General
 #----------------------------
-export EDITOR=vim
 export LANG=en_US.UTF-8
+
+if type "nvim" > /dev/null; then
+  export VISUAL=nvim
+else
+  export VISUAL=vim
+fi
+export EDITOR=$VISUAL
+export GIT_EDITOR=$VISUAL
 
 setopt correct
 setopt interactivecomments
