@@ -57,7 +57,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=dark
-colorscheme onedark
+if has('nvim') | colorscheme onedark | endif
 
 " === Key Mapping ===
 nnoremap Y y$
