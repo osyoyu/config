@@ -214,6 +214,8 @@ export PATH="$PATH:$HOME/.local/bin"
 
 
 #----------------------------
-# Other env vars
+# Local config
 #----------------------------
-export GPG_TTY=$(tty)
+if [[ -f $HOME/.zshrc.local ]]; then
+  source $HOME/.zshrc.local
+fi
