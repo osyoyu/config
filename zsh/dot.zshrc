@@ -64,6 +64,9 @@ case ${OSTYPE} in
 esac
 
 # Other Aliases
+if type "nvim" > /dev/null; then
+  alias vim=nvim
+fi
 alias ssh-silent="ssh -fN"
 
 # Things come in handy
