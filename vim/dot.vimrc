@@ -23,6 +23,7 @@ if has('nvim')
 endif
 call plug#end()
 
+set mouse=
 set clipboard^=unnamed,unnamedplus
 set hidden
 set nobackup nowritebackup
