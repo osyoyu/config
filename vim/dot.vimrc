@@ -9,17 +9,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'
 Plug 'joshdick/onedark.vim'
-
-Plug 'sheerun/vim-polyglot'
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 if has('nvim')
-  Plug 'hrsh7th/nvim-cmp'
+  Plug 'j-hui/fidget.nvim'
+
+  Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/nvim-cmp'
 endif
 call plug#end()
 
@@ -82,11 +83,20 @@ if !has('nvim') | finish | endif
 
 set completeopt=menu,menuone,noselect
 
-" TODO: Setup LSP?
 lua <<EOF
-  local cmp = require'cmp'
+  require("fidget").setup({})
+
+  local lspconfig = require('lspconfig')
+  local cmp = require('cmp')
 
   cmp.setup({
+    formatting = {
+      format = function(_, vim_item)
+        vim_item.menu = ""
+        vim_item.kind = ""
+        return vim_item
+      end
+    },
     window = {
       -- completion = cmp.config.window.bordered(),
       -- documentation = cmp.config.window.bordered(),
@@ -94,13 +104,19 @@ lua <<EOF
     mapping = cmp.mapping.preset.insert({
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      ['<CR>'] = cmp.mapping.confirm({ select = false }),
     }),
-    sources = cmp.config.sources({
-      -- { name = 'nvim_lsp' }, -- LSP has higher precedence than others
-    }, {
-      { name = 'buffer' },
-      { name = 'path' },
-    })
+    sources = cmp.config.sources({},
+      {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'path' },
+      }
+    )
+  })
+
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  lspconfig.ruby_lsp.setup({
+    capabilities = capabilities
   })
 EOF
