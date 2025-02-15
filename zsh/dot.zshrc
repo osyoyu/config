@@ -3,14 +3,6 @@
 #----------------------------
 export LANG=en_US.UTF-8
 
-if type "nvim" > /dev/null; then
-  export VISUAL=nvim
-else
-  export VISUAL=vim
-fi
-export EDITOR=$VISUAL
-export GIT_EDITOR=$VISUAL
-
 setopt correct
 setopt interactivecomments
 
@@ -64,9 +56,6 @@ case ${OSTYPE} in
 esac
 
 # Other Aliases
-if type "nvim" > /dev/null; then
-  alias vim=nvim
-fi
 alias ssh-silent="ssh -fN"
 
 # Things come in handy
@@ -185,6 +174,7 @@ bindkey "\^P" bck-i-search
 #----------------------------
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1  # don't run update on install
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Ruby (rbenv)
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
@@ -211,6 +201,17 @@ fi
 
 # ~/.local/bin
 export PATH="$PATH:$HOME/.local/bin"
+
+
+# Run nvim check after Homebrew loads
+if type "nvim" > /dev/null; then
+  export VISUAL=nvim
+  alias vim=nvim # for humans
+else
+  export VISUAL=vim
+fi
+export EDITOR=$VISUAL
+export GIT_EDITOR=$VISUAL
 
 
 #----------------------------
