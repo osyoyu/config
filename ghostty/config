@@ -1,0 +1,16 @@
+term = xterm-256color
+
+font-size = 14
+font-family = "JetBrains Mono"
+font-family = "Hack"
+font-family = "Hiragino Kaku Gothic ProN"
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+window-padding-x = 4
+macos-non-native-fullscreen = true
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
+
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
