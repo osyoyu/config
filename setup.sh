@@ -1,13 +1,8 @@
 #!/bin/bash
 
+set -eu -o pipefail
+
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-
-if [ -z "$HOME" ]; then
-  echo "!!! DANGER !!!"
-  echo "Your \$HOME is empty. Aborting."
-
-  exit 1
-fi
 
 ln -sf ${DIR}/bash/dot.bashrc ${HOME}/.bashrc
 
