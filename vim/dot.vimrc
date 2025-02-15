@@ -1,27 +1,14 @@
-"============================
-" Vim
-"============================
 set encoding=utf-8
 
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-
-if has('nvim')
-  Plug 'j-hui/fidget.nvim'
-
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/vim-vsnip'
-  Plug 'hrsh7th/nvim-cmp'
-endif
+Plug 'github/copilot.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 set mouse=
@@ -59,7 +46,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=dark
-if has('nvim') | colorscheme onedark | endif
 
 " === Key Mapping ===
 nnoremap Y y$
@@ -75,48 +61,3 @@ filetype plugin indent on
 nnoremap <c-p> :GFiles<cr>
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = ['down:50%:hidden', 'ctrl-_']
-
-"============================
-" Neovim-only conf
-"============================
-if !has('nvim') | finish | endif
-
-set completeopt=menu,menuone,noselect
-
-lua <<EOF
-  require("fidget").setup({})
-
-  local lspconfig = require('lspconfig')
-  local cmp = require('cmp')
-
-  cmp.setup({
-    formatting = {
-      format = function(_, vim_item)
-        vim_item.menu = ""
-        vim_item.kind = ""
-        return vim_item
-      end
-    },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
-    }),
-    sources = cmp.config.sources({},
-      {
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'path' },
-      }
-    )
-  })
-
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  lspconfig.ruby_lsp.setup({
-    capabilities = capabilities
-  })
-EOF
