@@ -64,10 +64,19 @@ require("lazy").setup({
       ---@module 'blink.cmp'
       ---type blink.cmp.Config
       opts = {
-        keymap = { preset = 'default' },
+        keymap = {
+          preset = 'default',
+          ['<CR>'] = { 'select_and_accept', 'fallback' },
+        },
         sources = {
           default = { 'lsp', 'buffer', 'path' },
-        }
+        },
+        completion = {
+          accept = {
+            auto_brackets = { enabled = false },
+          },
+          menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end }
+        },
       },
       opts_extend = { "sources.default" }
     },
