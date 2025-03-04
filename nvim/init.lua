@@ -72,6 +72,9 @@ require("lazy").setup({
           default = { 'lsp', 'buffer', 'path' },
         },
         completion = {
+          list = {
+            selection = { preselect = false },
+          },
           accept = {
             auto_brackets = { enabled = false },
           },
