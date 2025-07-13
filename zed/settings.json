@@ -1,0 +1,53 @@
+// https://zed.dev/docs/configuring-zed
+{
+  // Editor
+  "vim_mode": true,
+  "use_autoclose": false,
+  "use_auto_surround": false,
+  "format_on_save": "off",
+
+  // Appearance
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "buffer_font_features": {
+    "calt": false
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+
+  // AI
+  "edit_predictions": {
+    "disabled_globs": ["*.json", "*.md", "*.yml"]
+  },
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3.5-sonnet"
+    }
+  },
+
+  // Language-specific
+  "languages": {
+    "Ruby": {
+      "format_on_save": "on",
+      "language_servers": ["ruby-lsp", "!sorbet", "!solargraph", "!rubocop", "..."]
+    }
+  },
+
+  "lsp": {
+    "ruby-lsp": {
+      "initialization_options": {
+        "enabled_features": {
+          "onTypeFormatting": false
+        }
+      }
+    }
+  }
+}
