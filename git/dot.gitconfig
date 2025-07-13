@@ -48,3 +48,5 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
+# vi: set noexpandtab tabstop=2 shiftwidth=2 :
