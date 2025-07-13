@@ -26,3 +26,5 @@ mkdir -p ${HOME}/.config/ghostty
 ln -sf ${DIR}/ghostty/config ${HOME}/.config/ghostty/config
 
 ln -sf ${DIR}/zed/settings.json ${HOME}/.config/zed/settings.json
+
+ln -sf ${DIR}/claude/settings.json ${HOME}/.claude/settings.json

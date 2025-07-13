@@ -1,0 +1,30 @@
+{
+  "model": "opus",
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(gh issue view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(rm:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r .tool_input.file_path | ruby -ne 'path = $_.chomp; s = File.read(path).lines.map{it.rstrip}.join(\"\\n\") + \"\\n\"; File.write(path, s)'"
+          }
+        ]
+      }
+    ]
+  }
+}
