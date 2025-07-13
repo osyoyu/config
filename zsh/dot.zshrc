@@ -68,6 +68,7 @@ alias zsh-reload="source ~/.zshrc"
 alias ds-store-delete="find . -name ".DS_Store" -depth -exec rm {} \;"
 alias rot13="tr A-Za-z N-ZA-Mn-za-m"
 alias fuckswp="find . -name '*.swp' -exec rm {} \;"
+alias jqless="jq -C | less -R"
 
 
 #----------------------------
