@@ -87,41 +87,6 @@ require("lazy").setup({
     { 'neovim/nvim-lspconfig' },
     { 'j-hui/fidget.nvim' },
     { 'github/copilot.vim' },
-    {
-      'yetone/avante.nvim',
-      event = "VeryLazy",
-      lazy = false,
-      version = false,
-      opts = {
-        provider = 'claude',
-        -- auto_suggestions_provider = 'claude',
-        claude = {
-          endpoint = "https://api.anthropic.com",
-          model = "claude-3-5-sonnet-20241022",
-          temperature = 0,
-          max_tokens = 4096,
-        },
-        file_selector = {
-          --- @alias FileSelectorProvider "native" | "fzf" | "mini.pick" | "snacks" | "telescope" | string | fun(params: avante.file_selector.IParams|nil): nil
-          provider = "fzf",
-          -- Options override for custom providers
-          provider_opts = {},
-        }
-      },
-      build = "make",
-      dependencies = {
-        { "stevearc/dressing.nvim" },
-        { "nvim-lua/plenary.nvim" },
-        { "MunifTanjim/nui.nvim"} ,
-        {
-          'MeanderingProgrammer/render-markdown.nvim',
-          opts = {
-            file_types = { "Avante" },
-          },
-          ft = { "Avante" },
-        },
-      },
-    }
   },
   -- automatically check for plugin updates
   -- checker = { enabled = true },
