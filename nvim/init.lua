@@ -48,6 +48,7 @@ end, { noremap = true })
 -- Syntax highlighting
 vim.opt.syntax = 'on'
 vim.opt.filetype = 'on'
+vim.cmd('let g:c_syntax_for_h = 1')
 
 -- Plugins
 require("lazy").setup({
