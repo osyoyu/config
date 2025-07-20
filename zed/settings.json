@@ -8,7 +8,7 @@
 
   // Appearance
   "theme": {
-    "mode": "dark",
+    "mode": "light",
     "light": "One Light",
     "dark": "One Dark"
   },
@@ -21,6 +21,8 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
+  "outline_panel": { "dock": "right" },
+  "project_panel": { "dock": "right" },
 
   // AI
   "edit_predictions": {
