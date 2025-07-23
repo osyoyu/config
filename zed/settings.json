@@ -26,7 +26,10 @@
   "git_panel": { "button": false },
   "collaboration_panel": { "button": false },
 
-  // AI
+  // Completions and Predictions
+  "completions": {
+    "words": "enabled"
+  },
   "edit_predictions": {
     "disabled_globs": ["*.json", "*.md", "*.yml"]
   },
