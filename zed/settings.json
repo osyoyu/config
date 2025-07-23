@@ -21,8 +21,10 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
+  "project_panel": { "dock": "right", "default_width": 720 },
   "outline_panel": { "dock": "right" },
-  "project_panel": { "dock": "right" },
+  "git_panel": { "button": false },
+  "collaboration_panel": { "button": false },
 
   // AI
   "edit_predictions": {
