@@ -1,0 +1,24 @@
+// https://zed.dev/docs/key-bindings
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-k p": "workspace::CopyRelativePath", // replace workspace::CopyPath
+      "ctrl-;": "editor::ToggleInlayHints"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "tab": "editor::Tab", // unbind editor::ConfirmCompletion
+      "enter": "editor::Newline" // unbind editor::ConfirmCompletion
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "K": "editor::Hover"
+    }
+  }
+]
