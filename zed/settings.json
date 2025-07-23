@@ -42,6 +42,9 @@
   "features": {
     "edit_prediction_provider": "copilot"
   },
+  "inlay_hints": {
+    "enabled": true
+  },
 
   // Language-specific
   "languages": {
