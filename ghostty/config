@@ -12,5 +12,5 @@ macos-non-native-fullscreen = true
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
-keybind = alt+left=esc:b
-keybind = alt+right=esc:f
+keybind = alt+left=unbind
+keybind = alt+right=unbind
