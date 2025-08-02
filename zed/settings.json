@@ -5,6 +5,9 @@
   "use_autoclose": false,
   "use_auto_surround": false,
   "format_on_save": "off",
+  "file_types": {
+    "YAML/ERB": ["database.yml"]
+  },
 
   // Appearance
   "theme": {
