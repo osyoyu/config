@@ -19,5 +19,11 @@
       "shift-y": ["workspace::SendKeystrokes", "y $"],
       "shift-k": "editor::Hover"
     }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "cmd-left": "project_panel::CollapseAllEntries"
+    }
   }
 ]
