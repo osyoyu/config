@@ -14,9 +14,10 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
-      "K": "editor::Hover"
+      "shift-y": ["workspace::SendKeystrokes", "y $"],
+      "shift-k": "editor::Hover"
     }
   }
 ]
