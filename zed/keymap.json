@@ -10,9 +10,7 @@
   {
     "context": "Editor && showing_completions",
     "bindings": {
-      "ctrl-y": "editor::ConfirmCompletion",
-      "tab": "editor::Tab", // unbind editor::ConfirmCompletion
-      "enter": "editor::Newline" // unbind editor::ConfirmCompletion
+      "tab": "editor::Tab" // unbind editor::ConfirmCompletion
     }
   },
   {
