@@ -45,18 +45,19 @@ filetype plugin indent on
 "============================
 " Plugin config
 "============================
-if !has('nvim')
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'github/copilot.vim'
-Plug 'tpope/vim-fugitive'
+" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin()
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
+  Plug 'github/copilot.vim'
+  if has('nvim') | Plug 'navarasu/onedark.nvim' | Plug 'joshdick/onedark.vim' | endif
+  if has('nvim')
+  Plug 'neovim/nvim-lspconfig'
+  endif
 call plug#end()
-endif
 
 nnoremap <c-p> :GFiles<cr>
 let g:fzf_layout = { 'down': '~40%' }
