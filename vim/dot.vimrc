@@ -36,6 +36,8 @@ set background=dark
 " === Key Mapping ===
 nnoremap Y y$
 nnoremap Q <Nop>
+let mapleader = " "
+nnoremap <Leader><Leader> :w<CR>
 
 " === Language support ===
 syntax on
