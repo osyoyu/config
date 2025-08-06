@@ -22,7 +22,6 @@ set nohlsearch
 
 " === Appearance ===
 set display+=lastline  " Display very long lines
-set pumheight=3        " Limit completion window to 3 lines
 set cursorline
 set signcolumn=number
 set laststatus=0
@@ -56,6 +55,10 @@ call plug#begin()
   if has('nvim') | Plug 'navarasu/onedark.nvim' | Plug 'joshdick/onedark.vim' | endif
   if has('nvim')
   Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/nvim-cmp'
   endif
 call plug#end()
 
