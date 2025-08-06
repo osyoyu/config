@@ -7,8 +7,6 @@ vim.keymap.set('n', 'ff', function()
   vim.lsp.buf.format()
 end, { noremap = true })
 
-vim.cmd('let g:c_syntax_for_h = 1')
-
 require('onedark').setup({
   style = 'cool',
 })

@@ -40,6 +40,7 @@ nnoremap Q <Nop>
 " === Language support ===
 syntax on
 filetype plugin indent on
+let g:c_syntax_for_h = 1
 
 "============================
 " Plugin config
@@ -65,3 +66,5 @@ call plug#end()
 nnoremap <c-p> :GFiles<cr>
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = ['down:50%:hidden', 'ctrl-_']
+
+" gf ~/.config/nvim/init.lua
