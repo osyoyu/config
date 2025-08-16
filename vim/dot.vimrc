@@ -25,13 +25,14 @@ set display+=lastline  " Display very long lines
 set cursorline
 set signcolumn=number
 set laststatus=0
+set pumheight=10
 
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-set background=dark
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
+" set background=dark
 
 " === Key Mapping ===
 nnoremap Y y$
@@ -62,11 +63,26 @@ call plug#begin()
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/nvim-cmp'
+  Plug 'j-hui/fidget.nvim'
   endif
 call plug#end()
 
 nnoremap <c-p> :GFiles<cr>
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = ['down:50%:hidden', 'ctrl-_']
+
+" プレビューウィンドウを垂直分割で表示する
+let g:netrw_preview=1
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+
+set foldmethod=indent foldlevelstart=99
 
 " gf ~/.config/nvim/init.lua
