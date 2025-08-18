@@ -15,7 +15,6 @@ ln -sf ${DIR}/vim/dot.vimrc ${HOME}/.vimrc
 ln -sfn ${DIR}/vim/dot.vim ${HOME}/.vim
 
 ln -sfn ${DIR}/vim/dot.vim ${HOME}/.config/nvim
-ln -sf ${DIR}/nvim/init.lua ${HOME}/.config/nvim/init.lua
 
 ln -sf ${DIR}/tmux/dot.tmux.conf ${HOME}/.tmux.conf
 
