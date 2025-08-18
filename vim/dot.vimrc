@@ -25,6 +25,7 @@ set display+=lastline  " Display very long lines
 set cursorline
 set signcolumn=number
 set laststatus=0
+set pumheight=10
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
