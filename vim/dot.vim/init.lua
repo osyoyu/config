@@ -43,3 +43,5 @@ vim.lsp.enable("clangd")
 vim.lsp.enable("ruby-lsp")
 
 require('fidget').setup {}
+
+vim.diagnostic.config({ virtual_text = true })
