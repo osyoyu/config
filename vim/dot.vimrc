@@ -57,7 +57,6 @@ call plug#begin()
   Plug 'github/copilot.vim'
   if has('nvim') | Plug 'navarasu/onedark.nvim' | Plug 'joshdick/onedark.vim' | endif
   if has('nvim')
-  Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-path'
