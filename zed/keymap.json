@@ -17,7 +17,8 @@
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
       "shift-y": ["workspace::SendKeystrokes", "y $"],
-      "shift-k": "editor::Hover"
+      "shift-k": "editor::Hover",
+      "space space": "workspace::Save"
     }
   },
   {
