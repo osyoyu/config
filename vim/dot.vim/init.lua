@@ -41,3 +41,5 @@ vim.lsp.config('*', {
 })
 vim.lsp.enable("clangd")
 vim.lsp.enable("ruby-lsp")
+
+require('fidget').setup {}
