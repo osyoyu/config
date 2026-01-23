@@ -39,6 +39,15 @@ vim.lsp.config('*', {
     client.server_capabilities.semanticTokensProvider = nil
   end,
 })
+vim.lsp.config("ruby-lsp", {
+  init_options = {
+    addonSettings = {
+      ["Ruby LSP Rails"] = {
+        enablePendingMigrationsPrompt = false,
+      },
+    },
+  },
+})
 vim.lsp.enable("clangd")
 vim.lsp.enable("ruby-lsp")
 
