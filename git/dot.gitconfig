@@ -25,11 +25,8 @@
 	d = diff -b
 	co = checkout
 	cob = checkout -b
-	c = commit
 	s = status -s
 	l = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd\n%Cblue%cn %Cred%d %Creset%s'
-	rollback = reset @~1
-	r = reset @~1
 	wip = commit -a -m wip
 	unwip = reset @~1
 	logg = log --stat --graph --decorate=full
@@ -40,8 +37,6 @@
 	superpull = pull upstream master
 	superpush = ! git push -u origin $(git rev-parse --abbrev-ref HEAD)
 	pushf = push --force-with-lease
-	current = rev-parse --short HEAD
-	ingush = ! git push -f upstream $(git rev-parse --abbrev-ref HEAD):staging
 
 [filter "lfs"]
 	process = git-lfs filter-process
