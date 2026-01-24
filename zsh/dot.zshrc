@@ -48,10 +48,12 @@ setopt auto_pushd
 #----------------------------
 case ${OSTYPE} in
   linux*)
-    alias ls="ls -lh --color=auto --show-control-chars"
+    alias ls="ls -l --color=auto --show-control-chars"
+    alias ll="ls -lh --color=auto --show-control-chars"
     ;;
   darwin*)
-    alias ls="ls -lhG"
+    alias ls="ls -G"
+    alias ll="ls -lhG"
     ;;
 esac
 
