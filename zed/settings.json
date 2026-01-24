@@ -28,6 +28,13 @@
   "outline_panel": { "dock": "right" },
   "git_panel": { "button": false },
   "collaboration_panel": { "button": false },
+  "gutter": {
+    "line_numbers": false,
+    "breakpoints": false,
+    "folds": false,
+    "runnables": false,
+    "min_line_number_digits": 0,
+  },
 
   // Completions and Predictions
   "completions": {

@@ -11,7 +11,6 @@ set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,sjis
 
 " === Editor ===
-set number
 set list listchars=tab:>\ ,trail:_,nbsp:!
 set tabstop=2 shiftwidth=2 expandtab
 set backspace=indent,start
