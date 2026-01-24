@@ -1,9 +1,10 @@
 term = xterm-256color
 
 font-size = 14
-font-family = "JetBrains Mono"
-font-family = "Hack"
-font-family = "Hiragino Kaku Gothic ProN"
+font-family = "Comic Code"
+font-family = "Monaco"
+# don't forget to disable the proportional version
+font-family = "Osaka"
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
