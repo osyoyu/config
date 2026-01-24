@@ -70,4 +70,6 @@ nnoremap <c-p> :GFiles<cr>
 let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_preview_window = ['down:50%:hidden', 'ctrl-_']
 
+let g:copilot_filetypes = {'*': v:true, 'text': v:false, 'markdown': v:false}
+
 " gf ~/.config/nvim/init.lua
