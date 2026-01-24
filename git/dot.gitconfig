@@ -32,7 +32,7 @@
 	logg = log --stat --graph --decorate=full
 	loggg = log --stat --graph --format=fuller
 	logdiff = log -p -b -5
-	ls = stash list
+	ls = stash list --format='%gd %cs: %gs'
 	unstage = reset HEAD
 	superpull = pull upstream master
 	superpush = ! git push -u origin $(git rev-parse --abbrev-ref HEAD)
