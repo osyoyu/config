@@ -71,6 +71,11 @@
       "initialization_options": {
         "enabled_features": {
           "onTypeFormatting": false
+        },
+        "addonSettings": {
+          "Ruby LSP Rails": {
+            "enablePendingMigrationsPrompt": false
+          }
         }
       }
     }
