@@ -10,7 +10,15 @@
   {
     "context": "Editor && showing_completions",
     "bindings": {
-      "tab": "editor::Tab" // unbind editor::ConfirmCompletion
+      "tab": "editor::Tab", // unbind editor::ConfirmCompletion
+      "enter": "editor::Newline", // unbind editor::ConfirmCompletion
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "ctrl-g": "editor::AcceptEditPrediction" // unbind editor::ConfirmCompletion
     }
   },
   {
