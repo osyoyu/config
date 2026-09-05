@@ -202,7 +202,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 
 # Run nvim check after Homebrew loads
-if type "nvim" > /dev/null; then
+if false && type "nvim" > /dev/null; then
   export VISUAL=nvim
   alias vim=nvim # for humans
 else
