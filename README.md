@@ -1,11 +1,7 @@
-osyoyu config files
-===================
+# osyoyu/config
 
-これ is 何
-----------
-おしょーゆの`.vimrc`とか`.zshrc`とかです。
+## Setup
 
-If you are osyoyu
------------------
-1. `git clone git@github.com:osyoyu/config.git`
-2. `./setup.sh`
+```
+./setup.sh
+```
