@@ -200,16 +200,9 @@ fi
 # ~/.local/bin
 export PATH="$PATH:$HOME/.local/bin"
 
-
-# Run nvim check after Homebrew loads
-if false && type "nvim" > /dev/null; then
-  export VISUAL=nvim
-  alias vim=nvim # for humans
-else
-  export VISUAL=vim
-fi
-export EDITOR=$VISUAL
-export GIT_EDITOR=$VISUAL
+export EDITOR=vim
+export VISUAL=$EDITOR
+export GIT_EDITOR=$EDITOR
 
 
 #----------------------------
