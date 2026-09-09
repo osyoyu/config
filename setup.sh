@@ -30,4 +30,5 @@ ln -sf ${DIR}/zed/keymap.json ${HOME}/.config/zed/keymap.json
 ln -sf ${DIR}/claude/settings.json ${HOME}/.claude/settings.json
 ln -sf ${DIR}/claude/CLAUDE.md ${HOME}/.claude/CLAUDE.md
 
+mkdir -p ${HOME}/.agents/plugins
 ln -sf ${DIR}/agents/plugins/marketplace.json ${HOME}/.agents/plugins/marketplace.json
