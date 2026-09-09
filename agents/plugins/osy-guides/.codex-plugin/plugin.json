@@ -1,0 +1,18 @@
+{
+  "name": "osy-guides",
+  "version": "0.1.0",
+  "description": "Personal preferences",
+  "author": {
+    "name": "osyoyu"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "osy-guides",
+    "shortDescription": "Personal preferences",
+    "longDescription": "Personal preferences",
+    "developerName": "osyoyu",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Apply my personal preferences to this project."
+  }
+}

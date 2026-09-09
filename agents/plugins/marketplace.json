@@ -1,0 +1,20 @@
+{
+  "name": "personal",
+  "interface": {
+    "displayName": "Personal"
+  },
+  "plugins": [
+    {
+      "name": "osy-guides",
+      "source": {
+        "source": "local",
+        "path": "./config/agents/plugins/osy-guides"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
