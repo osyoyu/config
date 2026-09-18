@@ -11,13 +11,13 @@
 
   // Appearance
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "One Light",
     "dark": "One Dark"
   },
   "ui_font_size": 16,
-  "buffer_font_size": 14,
-  "buffer_font_family": "Comic Code",
+  "buffer_font_size": 15,
+  "buffer_font_family": "IBM Plex Mono",
   "buffer_font_fallbacks": ["Osaka"], // こんにちは
   "buffer_font_features": {
     "calt": false
@@ -26,7 +26,7 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
-  "project_panel": { "dock": "right", "default_width": 720 },
+  "project_panel": { "default_width": 640 },
   "outline_panel": { "dock": "right" },
   "git_panel": { "button": false },
   "collaboration_panel": { "button": false },
@@ -43,16 +43,20 @@
     "words": "enabled"
   },
   "edit_predictions": {
+    "provider": "copilot",
     "disabled_globs": ["*.json", "*.md", "*.yml"]
   },
   "agent": {
+    "dock": "right",
+    "default_width": 780.0,
+    "max_content_width": 1200.0,
+    "limit_content_width": true,
+    "flexible": false,
+    "use_modifier_to_send": true,
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3.5-sonnet"
     }
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
   },
   "inlay_hints": {
     "enabled": true
@@ -62,7 +66,7 @@
   "languages": {
     "Ruby": {
       "format_on_save": "on",
-      "language_servers": ["ruby-lsp", "!sorbet", "!steep", "!solargraph", "!rubocop", "..."]
+      "language_servers": ["ruby-lsp", "!sorbet", "!steep", "!solargraph", "!rubocop", "!fuzzy-ruby-server", "!kanayago", "..."]
     }
   },
 
