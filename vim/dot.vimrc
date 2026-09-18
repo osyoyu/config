@@ -61,6 +61,9 @@ call plug#begin()
   Plug 'yegappan/lsp'
 call plug#end()
 
+let g:tokyonight_style = 'storm-mod'
+let g:tokyonight_disable_italic_comment = 1
+" colorscheme tokyonight
 colorscheme onedark
 
 " === Misc plugins ===
